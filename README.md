@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/53145644/182699252-11aa7eee-9f3c-46ca-b568-2c80560b830e.png)
 
+Link to project: https://imaginative-cuchufli-976291.netlify.app/
+
 ### Stack used
 [x] - React
 
