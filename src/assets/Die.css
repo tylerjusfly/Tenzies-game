@@ -1,0 +1,11 @@
+.die--card{
+    text-align: center;
+    padding: 14px 0;
+    color: white;
+    /* background-color: black; */
+    width: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
