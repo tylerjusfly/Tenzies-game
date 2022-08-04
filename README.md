@@ -17,8 +17,8 @@ Link to project: https://imaginative-cuchufli-976291.netlify.app/
 
 [ ] - Put real dots on dice
 
-[ ] - Track Number of Rolls
+[x] - Track Number of Rolls
 
-[ ] - Save number of rolls made to win , save to local storage and Beat high score
+[x] - Save number of rolls made to win , save to local storage and Beat high score
 
 [ ] - make it multiplayer

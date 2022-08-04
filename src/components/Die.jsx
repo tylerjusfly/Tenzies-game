@@ -7,8 +7,11 @@ export default function (props) {
         backgroundColor : props.isHeld ? "#59e391" : "black"
     }
     
-
-  return (
-    <div className='die--card' style={styles} onClick={props.hold}>{props.value}</div>
+    const dot = <p className='dots--dots'>.</p>
+    
+    return (
+      <>
+      <div className='die--card' style={styles} onClick={props.hold}>{props.value}</div>
+      </>
   )
 }

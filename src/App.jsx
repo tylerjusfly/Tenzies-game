@@ -24,6 +24,7 @@ export default function App() {
   }
   // creating state to hold array of nums
   const [DiceNums, setDiceNums] = React.useState(allNewDice())
+  const [numOfrolls, setNumOfRolls] = React.useState(0)
 
   const [tenzies, setTenzies] = React.useState(false)
   React.useEffect(() => {
@@ -34,7 +35,9 @@ export default function App() {
     if(allHeld && allValue === true ){
       setTenzies(true)
     }
-    else{ setTenzies(false)}
+    else{
+      setTenzies(false)
+    }
     
   }, DiceNums)
 
@@ -51,12 +54,22 @@ export default function App() {
 
   function reRollDice(){
     if(!tenzies){
+      setNumOfRolls(prevWins => prevWins + 1)
       setDiceNums(oldDice => oldDice.map(die => {
         return die.isheld == false ? generateNewDie() : die
           }))
     }
     else{
+      let high = localStorage.getItem("highestRoll")
+      if(!high){ localStorage.setItem("highestRoll", numOfrolls)}
+      else{ 
+        numOfrolls < high ? localStorage.setItem('highestRoll', numOfrolls) 
+              : localStorage.setItem('highestRoll', high) 
+            }
+
       setTenzies(false)
+      setNumOfRolls(0)
+      
       setDiceNums(allNewDice())
     }
   }
@@ -70,6 +83,8 @@ export default function App() {
   return (
     <main>
       {tenzies && <Confetti/>}
+      <div>Number of Rolls  : {numOfrolls}</div>
+      <div>Best Roll : {localStorage.getItem("highestRoll")}</div>
       <div className="title"> Tenzies By TylerJusFly </div>
       <div className="game--plan">
         Roll until the dice are the same <p> Click on each die to freeze it at its current value between rolls </p>

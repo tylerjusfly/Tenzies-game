@@ -9,3 +9,8 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.dots--dots{
+    font-size: 2rem;
+    font-weight: 900;
+}
